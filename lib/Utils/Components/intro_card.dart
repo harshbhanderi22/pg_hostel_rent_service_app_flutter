@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:real/Utils/app_styles.dart';
 
-import 'app_styles.dart';
-
-
+ 
 class IntroCard extends StatelessWidget {
   const IntroCard({
   super.key,
@@ -43,57 +42,55 @@ class IntroCard extends StatelessWidget {
           SizedBox(
             height: 10.h,
           ),
-          Container(
-            child: Row(
-              children: [
-                SizedBox(
-                  height: 25.h,
-                  width: 15.w,
-                  child: DecoratedBox(
-                    decoration: BoxDecoration(
-                        color: Styles.bgColor,
-                        borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(15.r),
-                          bottomRight: Radius.circular(15.r),
-                        )),
-                  ),
+          Row(
+            children: [
+              SizedBox(
+                height: 25.h,
+                width: 15.w,
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                      color: Styles.bgColor,
+                      borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(15.r),
+                        bottomRight: Radius.circular(15.r),
+                      )),
                 ),
-                Expanded(
-                  child: LayoutBuilder(
-                    builder: (BuildContext context , BoxConstraints constraints) {
-                      return Flex(
-                        direction: Axis.horizontal,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        mainAxisSize: MainAxisSize.max,
-                        children: List.generate(
-                            (constraints.constrainWidth() / 15).floor(),
-                                (index) => SizedBox(
-                              width: 6.w,
-                              height: 4.h,
-                              child: DecoratedBox(
-                                decoration: BoxDecoration(
-                                  color: Styles.bgColor,
-                                ),
+              ),
+              Expanded(
+                child: LayoutBuilder(
+                  builder: (BuildContext context , BoxConstraints constraints) {
+                    return Flex(
+                      direction: Axis.horizontal,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisSize: MainAxisSize.max,
+                      children: List.generate(
+                          (constraints.constrainWidth() / 15).floor(),
+                              (index) => SizedBox(
+                            width: 6.w,
+                            height: 4.h,
+                            child: DecoratedBox(
+                              decoration: BoxDecoration(
+                                color: Styles.bgColor,
                               ),
-                            )),
-                      );
-                    },
-                  ),
+                            ),
+                          )),
+                    );
+                  },
                 ),
-                SizedBox(
-                  height: 25.h,
-                  width: 15.w,
-                  child: DecoratedBox(
-                    decoration: BoxDecoration(
-                        color: Styles.bgColor,
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(15.r),
-                          bottomLeft: Radius.circular(15.r),
-                        )),
-                  ),
+              ),
+              SizedBox(
+                height: 25.h,
+                width: 15.w,
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                      color: Styles.bgColor,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(15.r),
+                        bottomLeft: Radius.circular(15.r),
+                      )),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
           SizedBox(
             height: 10.h,

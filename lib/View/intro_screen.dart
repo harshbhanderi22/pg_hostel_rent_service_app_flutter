@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:real/Utils/Components/button.dart';
+import 'package:real/Utils/Components/intro_card.dart';
+import 'package:real/Utils/Routes/route_name.dart';
 import 'package:real/Utils/app_styles.dart';
-import 'package:real/Utils/button.dart';
-
-import '../Utils/intro_card.dart';
 
 class IntroScreen extends StatelessWidget {
   const IntroScreen({Key? key}) : super(key: key);
@@ -32,24 +31,28 @@ class IntroScreen extends StatelessWidget {
               SizedBox(
                 height: 40.h,
               ),
-
               //For Intro Card..
-              IntroCard(),
-              Spacer(),
-              Button(text: 'Create Account'),
+              const IntroCard(),
+              const Spacer(),
+              Button(
+                onTap: () {
+                  Navigator.of(context).pushNamed(RoutesName.signUpScreen);
+                },
+                text: 'Create Account',
+              ),
               SizedBox(
-                height: 10.h,
+                height: 15.h,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Have an account? ',
+                    'Already have an account? ',
                     style: Styles.textStyle.copyWith(fontSize: 14.sp),
                   ),
                   Text(
                     ' Log In',
-                    style: Styles.headLineStyle3.copyWith(color: Colors.blue),
+                    style: Styles.headLineStyle4.copyWith(color: Colors.blue),
                   )
                 ],
               )
@@ -60,5 +63,3 @@ class IntroScreen extends StatelessWidget {
     );
   }
 }
-
-
