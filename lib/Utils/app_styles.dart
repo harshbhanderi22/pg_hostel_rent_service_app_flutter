@@ -26,4 +26,25 @@ class Styles {
       fontSize: 14.sp,
       color: Colors.grey.shade500,
       fontWeight: FontWeight.w500);
+
+  //Validation Strings
+  static String nameValidation =
+      "Your name is the first thing we'll know about you, so let's get to know you!";
+  static String emailValidation =
+      " We need your email address to keep in touch.";
+
+  static String passwordValidation =
+      " Your password is your key to your account. Make sure it's strong!";
+
+  static String confirmPasswordValidation =
+      "Please confirm your password to make sure you didn't forget it.";
+
+  static String passwordNotMatchValidation =
+      " Your passwords don't match! Please try again.";
+
+  static String inValidEmailValidation =
+      "Your email address doesn't look quite right. Let's try that again.";
+
+  static String passwordLengthValidation =
+      "Your password is too short! Make it longer so it's more secure.";
 }

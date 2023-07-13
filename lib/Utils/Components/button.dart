@@ -3,9 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:real/Utils/app_styles.dart';
 
 class Button extends StatelessWidget {
-  final String text;
+  final Widget child;
   final Function onTap;
-  const Button({super.key, required this.text,required this.onTap});
+  const Button({super.key, required this.child, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -15,16 +15,13 @@ class Button extends StatelessWidget {
       },
       child: Container(
         width: double.infinity,
-        padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 12.h),
+        padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 10.h),
         decoration: BoxDecoration(
           color: Styles.darkPrimaryColor,
           borderRadius: BorderRadius.circular(10.r),
         ),
         child: Center(
-            child: Text(
-          text,
-          style: Styles.textStyle.copyWith(color: Colors.white),
-        )),
+            child: child),
       ),
     );
   }

@@ -3,10 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:real/Utils/app_styles.dart';
 
- 
 class IntroCard extends StatelessWidget {
   const IntroCard({
-  super.key,
+    super.key,
   });
 
   @override
@@ -22,8 +21,7 @@ class IntroCard extends StatelessWidget {
           Container(
             width: double.infinity,
             height: 180.h,
-            margin: EdgeInsets.symmetric(
-                horizontal: 12.w, vertical: 12.h),
+            margin: EdgeInsets.symmetric(horizontal: 12.w, vertical: 12.h),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12.r),
               image: const DecorationImage(
@@ -33,8 +31,7 @@ class IntroCard extends StatelessWidget {
             ),
           ),
           Padding(
-            padding:
-            EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
+            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
             child: Text(
                 'Effortlessly find the perfect property or rental accommodation to suit your needs.',
                 style: Styles.textStyle.copyWith(fontSize: 14.sp)),
@@ -58,22 +55,22 @@ class IntroCard extends StatelessWidget {
               ),
               Expanded(
                 child: LayoutBuilder(
-                  builder: (BuildContext context , BoxConstraints constraints) {
+                  builder: (BuildContext context, BoxConstraints constraints) {
                     return Flex(
                       direction: Axis.horizontal,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       mainAxisSize: MainAxisSize.max,
                       children: List.generate(
                           (constraints.constrainWidth() / 15).floor(),
-                              (index) => SizedBox(
-                            width: 6.w,
-                            height: 4.h,
-                            child: DecoratedBox(
-                              decoration: BoxDecoration(
-                                color: Styles.bgColor,
-                              ),
-                            ),
-                          )),
+                          (index) => SizedBox(
+                                width: 6.w,
+                                height: 4.h,
+                                child: DecoratedBox(
+                                  decoration: BoxDecoration(
+                                    color: Styles.bgColor,
+                                  ),
+                                ),
+                              )),
                     );
                   },
                 ),
@@ -96,8 +93,7 @@ class IntroCard extends StatelessWidget {
             height: 10.h,
           ),
           Padding(
-            padding: EdgeInsets.only(
-                left: 12.w, right: 12.w , bottom: 12.h),
+            padding: EdgeInsets.only(left: 12.w, right: 12.w, bottom: 12.h),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,

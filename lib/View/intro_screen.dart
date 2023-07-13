@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:real/Utils/Components/button.dart';
 import 'package:real/Utils/Components/intro_card.dart';
+import 'package:real/Utils/Components/logo_box.dart';
 import 'package:real/Utils/Routes/route_name.dart';
 import 'package:real/Utils/app_styles.dart';
 
@@ -10,24 +11,16 @@ class IntroScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Styles.bgColor,
-      body: SafeArea(
-          child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 52.h),
-        child: SizedBox(
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Styles.bgColor,
+        body: Container(
+          padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 52.h),
           width: double.infinity,
           child: Column(
             children: [
-              //For LOGO..
-              Container(
-                height: 60.h,
-                width: 60.w,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20.r)),
-              ),
-
+              //TODO: Add Logo Here
+              const LogoBox(),
               SizedBox(
                 height: 40.h,
               ),
@@ -38,7 +31,10 @@ class IntroScreen extends StatelessWidget {
                 onTap: () {
                   Navigator.of(context).pushNamed(RoutesName.signUpScreen);
                 },
-                text: 'Create Account',
+                child: Text(
+                  "Create Account",
+                  style: Styles.textStyle.copyWith(color: Colors.white),
+                ),
               ),
               SizedBox(
                 height: 15.h,
@@ -50,16 +46,21 @@ class IntroScreen extends StatelessWidget {
                     'Already have an account? ',
                     style: Styles.textStyle.copyWith(fontSize: 14.sp),
                   ),
-                  Text(
-                    ' Log In',
-                    style: Styles.headLineStyle4.copyWith(color: Colors.blue),
+                  InkWell(
+                    onTap: () {
+                      Navigator.of(context).pushNamed(RoutesName.loginScreen);
+                    },
+                    child: Text(
+                      ' Log In',
+                      style: Styles.headLineStyle4.copyWith(color: Colors.blue),
+                    ),
                   )
                 ],
               )
             ],
           ),
         ),
-      )),
+      ),
     );
   }
 }

@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:real/Utils/Routes/route_name.dart';
 import 'package:real/Utils/Routes/routes.dart';
-import 'package:real/View/intro_screen.dart';
 import 'package:real/Viewmodel/auth_viewmodel.dart';
 
 import 'Utils/app_styles.dart';
@@ -26,6 +25,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
+          fontFamily: 'popins',
           primaryColor: primary ,
         ),
         initialRoute: RoutesName.introScreen,
