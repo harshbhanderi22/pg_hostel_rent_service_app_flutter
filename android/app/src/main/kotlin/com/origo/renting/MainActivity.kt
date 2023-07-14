@@ -1,4 +1,4 @@
-package com.example.real
+package com.origo.renting
 
 import io.flutter.embedding.android.FlutterActivity
 

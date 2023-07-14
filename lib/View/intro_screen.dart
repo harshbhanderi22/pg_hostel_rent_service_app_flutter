@@ -17,6 +17,7 @@ class IntroScreen extends StatelessWidget {
         body: Container(
           padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 52.h),
           width: double.infinity,
+          height: double.infinity,
           child: Column(
             children: [
               //TODO: Add Logo Here

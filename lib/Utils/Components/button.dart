@@ -15,6 +15,7 @@ class Button extends StatelessWidget {
       },
       child: Container(
         width: double.infinity,
+        height: 40,
         padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 10.h),
         decoration: BoxDecoration(
           color: Styles.darkPrimaryColor,
