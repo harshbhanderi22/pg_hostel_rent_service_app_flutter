@@ -4,9 +4,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:real/Utils/Routes/route_name.dart';
 import 'package:real/Utils/Routes/routes.dart';
-import 'package:real/Viewmodel/auth_viewmodel.dart';
+import 'package:real/Viewmodel/Auth%20View%20Models/login_viewmodel.dart';
+import 'package:real/Viewmodel/Auth%20View%20Models/other_method_viewmodel.dart';
+import 'package:real/Viewmodel/Auth%20View%20Models/register_viewmodel.dart';
 import 'package:real/firebase_options.dart';
-
 import 'Utils/app_styles.dart';
 
 void main() async {
@@ -23,7 +24,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [ChangeNotifierProvider(create: (context) => AuthViewModel())],
+      providers: [
+        ChangeNotifierProvider(create: (context) => LoginViewModel()),
+        ChangeNotifierProvider(create: (context) => RegisterViewModel()),
+        ChangeNotifierProvider(create: (context) => OtherLoginMethodViewModel()),
+        ],
       child: ScreenUtilInit(
         designSize: const Size(360, 740),
         builder: (context, child) => MaterialApp(

@@ -15,14 +15,13 @@ class Button extends StatelessWidget {
       },
       child: Container(
         width: double.infinity,
-        height: 40,
+        height: 50.h,
         padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 10.h),
         decoration: BoxDecoration(
           color: Styles.darkPrimaryColor,
           borderRadius: BorderRadius.circular(10.r),
         ),
-        child: Center(
-            child: child),
+        child: Center(child: child),
       ),
     );
   }
