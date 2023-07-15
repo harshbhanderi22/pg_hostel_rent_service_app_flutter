@@ -75,4 +75,8 @@ class Styles {
 
   static String passwordLengthValidation =
       "Your password is too short! Make it longer so it's more secure.";
+
+
+      
 }
+

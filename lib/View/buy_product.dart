@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../Utils/app_styles.dart';
 
 class BuyProduct extends StatefulWidget {
-  BuyProduct({Key? key}) : super(key: key);
+  const BuyProduct({Key? key}) : super(key: key);
 
   @override
   State<BuyProduct> createState() => _BuyProductState();

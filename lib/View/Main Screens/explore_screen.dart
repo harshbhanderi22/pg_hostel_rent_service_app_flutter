@@ -1,8 +1,9 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:real/View/buy_product.dart';
-
+import 'package:real/Viewmodel/explore_viewmodel.dart';
 import '../../Utils/app_styles.dart';
 
 class ExploreScreen extends StatefulWidget {
@@ -12,27 +13,19 @@ class ExploreScreen extends StatefulWidget {
   State<ExploreScreen> createState() => _ExploreScreenState();
 }
 
-enum option {
-  buy,
-  rent,
-}
-
 class _ExploreScreenState extends State<ExploreScreen> {
-  option selectedOption = option.buy;
-  bool buy = true;
-  bool rent = false;
   @override
   Widget build(BuildContext context) {
+    print("Whole Build");
     return SafeArea(
-      child: Container(
+      child: SizedBox(
         height: MediaQuery.of(context).size.height,
         width: double.infinity,
         child: Padding(
-          padding: const EdgeInsets.only(left: 20.0, right: 20.0 , top: 20.0),
+          padding: const EdgeInsets.only(left: 20.0, right: 20.0, top: 20.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Mini App Bar
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -65,7 +58,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
               const SizedBox(
                 height: 25.0,
               ),
-              // Option selector for buy and rent..
+              // Options selector for buy and rent..
               Container(
                 height: 50.0,
                 decoration: BoxDecoration(
@@ -76,42 +69,15 @@ class _ExploreScreenState extends State<ExploreScreen> {
                   padding: const EdgeInsets.all(3.0),
                   child: Row(
                     children: [
-                      Expanded(
-                        child: InkWell(
+                      Expanded(child: Consumer<ExploreViewModel>(
+                          builder: (context, value, child) {
+                        return InkWell(
                           onTap: () {
-                            setState(() {
-                              selectedOption = option.buy;
-                            });
+                            value.setSelectedOptions(Options.rent);
                           },
                           child: Container(
                             decoration: BoxDecoration(
-                                color: selectedOption == option.buy
-                                    ? const Color(0xFF21A7AF)
-                                    : Styles.greyColor,
-                                borderRadius: BorderRadius.circular(24.0)),
-                            child: Center(
-                                child: Text('Buy',
-                                    style: Styles.headLineStyle3.copyWith(
-                                        fontWeight: FontWeight.bold,
-                                        color: selectedOption == option.buy
-                                            ? Colors.white
-                                            : Styles.textColor))),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(
-                        width: 5.0,
-                      ),
-                      Expanded(
-                        child: InkWell(
-                          onTap: () {
-                            setState(() {
-                              selectedOption = option.rent;
-                            });
-                          },
-                          child: Container(
-                            decoration: BoxDecoration(
-                                color: selectedOption == option.rent
+                                color: value.getSelectedOptions == Options.rent
                                     ? const Color(0xFF21A7AF)
                                     : Styles.greyColor,
                                 borderRadius: BorderRadius.circular(24.0)),
@@ -119,12 +85,39 @@ class _ExploreScreenState extends State<ExploreScreen> {
                                 child: Text('Rent',
                                     style: Styles.headLineStyle3.copyWith(
                                         fontWeight: FontWeight.bold,
-                                        color: selectedOption == option.rent
+                                        color: value.getSelectedOptions ==
+                                                Options.rent
                                             ? Colors.white
                                             : Styles.textColor))),
                           ),
-                        ),
+                        );
+                      })),
+                      const SizedBox(
+                        width: 5.0,
                       ),
+                      Expanded(child: Consumer<ExploreViewModel>(
+                          builder: ((context, value, child) {
+                        return InkWell(
+                          onTap: () {
+                            value.setSelectedOptions(Options.buy);
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                                color: value.getSelectedOptions == Options.buy
+                                    ? const Color(0xFF21A7AF)
+                                    : Styles.greyColor,
+                                borderRadius: BorderRadius.circular(24.0)),
+                            child: Center(
+                                child: Text('Buy',
+                                    style: Styles.headLineStyle3.copyWith(
+                                        fontWeight: FontWeight.bold,
+                                        color: value.getSelectedOptions ==
+                                                Options.buy
+                                            ? Colors.white
+                                            : Styles.textColor))),
+                          ),
+                        );
+                      }))),
                     ],
                   ),
                 ),
@@ -140,11 +133,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
               const SizedBox(
                 height: 20.0,
               ),
-              Expanded(
-                child: Container(
-                    
-                    child: BuyProduct())
-              )
+              const Expanded(child: BuyProduct())
             ],
           ),
         ),

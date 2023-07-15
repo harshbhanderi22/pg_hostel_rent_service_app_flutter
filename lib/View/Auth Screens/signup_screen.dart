@@ -3,14 +3,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:real/Utils/Components/button.dart';
 import 'package:real/Utils/Components/common_textfield.dart';
-import 'package:real/Utils/Components/login_method_circle.dart';
 import 'package:real/Utils/Components/logo_box.dart';
 import 'package:real/Utils/Components/other_sign_in_method.dart';
 import 'package:real/Utils/Routes/route_name.dart';
 import 'package:real/Utils/app_styles.dart';
-import 'package:real/Viewmodel/Auth%20View%20Models/other_method_viewmodel.dart';
 import 'package:real/Viewmodel/Auth%20View%20Models/register_viewmodel.dart';
- 
+
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
 
@@ -70,8 +68,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         ? Icons.visibility_off
                         : Icons.visibility,
                     onSuffixTap: () {
-                      value.setObsecurity(
-                          !value.getObsecurity);
+                      value.setObsecurity(!value.getObsecurity);
                     },
                   );
                 }),
@@ -98,15 +95,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 _emailController.text,
                                 _passwordController.text,
                                 _confirmPasswordController.text);
-                                Navigator.of(context).pushNamed(RoutesName.homeScreen);
+                            Navigator.of(context)
+                                .pushNamed(RoutesName.homeScreen);
                           }));
-
                 }),
                 SizedBox(
                   height: 10.h,
                 ),
                 const OtherLoginMethods(),
-           SizedBox(
+                SizedBox(
                   height: 20.h,
                 ),
                 Row(
@@ -136,5 +133,3 @@ class _SignUpScreenState extends State<SignUpScreen> {
     );
   }
 }
-
-
