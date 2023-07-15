@@ -14,6 +14,10 @@ class IntroCard extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(24.r),
         color: Colors.white,
+        
+        boxShadow: [
+      Styles.greyShadow
+    ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -46,7 +50,7 @@ class IntroCard extends StatelessWidget {
                 width: 15.w,
                 child: DecoratedBox(
                   decoration: BoxDecoration(
-                      color: Styles.bgColor,
+                      color: Colors.grey.withOpacity(0.3),
                       borderRadius: BorderRadius.only(
                         topRight: Radius.circular(15.r),
                         bottomRight: Radius.circular(15.r),
@@ -67,7 +71,7 @@ class IntroCard extends StatelessWidget {
                                 height: 4.h,
                                 child: DecoratedBox(
                                   decoration: BoxDecoration(
-                                    color: Styles.bgColor,
+                                    color: Colors.grey.withOpacity(0.3),
                                   ),
                                 ),
                               )),
@@ -80,7 +84,7 @@ class IntroCard extends StatelessWidget {
                 width: 15.w,
                 child: DecoratedBox(
                   decoration: BoxDecoration(
-                      color: Styles.bgColor,
+                      color: Colors.grey.withOpacity(0.3),
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(15.r),
                         bottomLeft: Radius.circular(15.r),

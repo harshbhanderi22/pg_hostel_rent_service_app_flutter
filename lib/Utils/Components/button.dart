@@ -20,6 +20,7 @@ class Button extends StatelessWidget {
         decoration: BoxDecoration(
           color: Styles.darkPrimaryColor,
           borderRadius: BorderRadius.circular(10.r),
+          boxShadow: [Styles.blueShadow],
         ),
         child: Center(
             child: child),

@@ -7,9 +7,28 @@ class Styles {
   //Theme Colors..
   static Color primaryColor = primary;
   static Color textColor = const Color(0xFF3b3b3b);
-  static Color bgColor = const Color(0xFFeeedf2);
-  static Color darkPrimaryColor = const Color(0xFF526799);
+  //static Color bgColor = const Color(0xFFeeedf2);
+  static Color bgColor = const Color(0xffF9FAFD);
+  //static Color darkPrimaryColor = const Color(0xFF526799);
+  static Color darkPrimaryColor = const Color(0xff2A8EF0);
   static Color darkBlueColor = const Color(0xD91130CE);
+
+  //Shadow type..
+  static BoxShadow greyShadow = 
+      BoxShadow(
+        color: Colors.grey.withOpacity(0.5),
+        spreadRadius: 0.5,
+        blurRadius: 5,
+        offset: const  Offset(0.5, 0.5), // changes position of shadow
+      );
+        static BoxShadow blueShadow = 
+      BoxShadow(
+        color: darkPrimaryColor.withOpacity(0.5),
+        spreadRadius: 0.5,
+        blurRadius: 5,
+        offset: const  Offset(0.5, 0.5), // changes position of shadow
+      );
+
 
   //Text Styles..
   static TextStyle textStyle =
