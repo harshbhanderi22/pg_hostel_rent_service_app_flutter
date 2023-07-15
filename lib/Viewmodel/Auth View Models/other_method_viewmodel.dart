@@ -21,5 +21,6 @@ class OtherLoginMethodViewModel with ChangeNotifier {
 
   Future<void> signInWithFacebook() async {
     //TODO: Complete This Method
+    GeneralUtils.showToast("Coming Soon");
   }
 }

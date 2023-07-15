@@ -5,6 +5,7 @@ import 'package:real/Utils/Components/button.dart';
 import 'package:real/Utils/Components/common_textfield.dart';
 import 'package:real/Utils/Components/login_method_circle.dart';
 import 'package:real/Utils/Components/logo_box.dart';
+import 'package:real/Utils/Components/other_sign_in_method.dart';
 import 'package:real/Utils/Routes/route_name.dart';
 import 'package:real/Utils/app_styles.dart';
 import 'package:real/Viewmodel/Auth%20View%20Models/other_method_viewmodel.dart';
@@ -102,64 +103,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 SizedBox(
                   height: 10.h,
                 ),
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 30.w),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const [
-                      Expanded(
-                        child: Divider(
-                          color: Colors.grey,
-                          thickness: 1,
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 10),
-                        child: Text(
-                          'Or',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-                      Expanded(
-                        child: Divider(
-                          color: Colors.grey,
-                          thickness: 1,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 10.h,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Consumer<OtherLoginMethodViewModel>(builder: ((context, value, child) {
-                      return LoginMethodCircle(
-                        onTap: () {
-                          value.signInWithGoogle();
-                        },
-                        path: "assets/images/google.png",
-                      );
-                    })),
-                    SizedBox(
-                      width: 30.w,
-                    ),
-                    Consumer<OtherLoginMethodViewModel>(builder: ((context, value, child) {
-                      return LoginMethodCircle(
-                        onTap: () {
-                          value.signInWithFacebook();
-                        },
-                        path: "assets/images/facebook2.png",
-                      );
-                    })),
-                  ],
-                ),
-                SizedBox(
+                const OtherLoginMethods(),
+           SizedBox(
                   height: 20.h,
                 ),
                 Row(
@@ -189,3 +134,5 @@ class _SignUpScreenState extends State<SignUpScreen> {
     );
   }
 }
+
+

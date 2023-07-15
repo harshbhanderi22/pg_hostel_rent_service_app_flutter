@@ -2,6 +2,7 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:real/Utils/app_styles.dart';
 import 'package:real/Utils/general_utils.dart';
 
 class LoginViewModel with ChangeNotifier {
@@ -20,6 +21,22 @@ class LoginViewModel with ChangeNotifier {
     _obsecure = value;
     notifyListeners();
   }
+
+  void validateLoginDetailsAndLogin(
+      String email, String password) {
+   if (email.isEmpty) {
+      GeneralUtils.showToast(Styles.emailValidation);
+    } else if (GeneralUtils().checkValidEmail(email) == false) {
+      GeneralUtils.showToast(Styles.inValidEmailValidation);
+    } else if (password.isEmpty) {
+      GeneralUtils.showToast(Styles.passwordValidation);
+    } else if (password.length < 8) {
+      GeneralUtils.showToast(Styles.passwordLengthValidation);
+    }else {
+      loginUser(email, password);
+    }
+  }
+
 
   Future<void> loginUser(String email, String password) async {
     setLoading(true);
