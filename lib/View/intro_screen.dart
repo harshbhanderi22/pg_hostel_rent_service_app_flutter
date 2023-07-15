@@ -25,7 +25,6 @@ class IntroScreen extends StatelessWidget {
               SizedBox(
                 height: 40.h,
               ),
-              //For Intro Card..
               const IntroCard(),
               const Spacer(),
               Button(

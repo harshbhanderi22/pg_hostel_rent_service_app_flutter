@@ -7,42 +7,6 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:569260151805:android:ccd3c1c58c4926776cff94",
-        "android_client_info": {
-          "package_name": "com.example.real"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "569260151805-vk7n9n9t2hds8845ip7ktilclv1mdsd9.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyBOYWB2MP3lrRtXFVC7emQFN5cMZsR_ay4"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "569260151805-vk7n9n9t2hds8845ip7ktilclv1mdsd9.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "569260151805-nacksgmggj89f4tc8tfsbfar2d43anri.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.example.real"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
         "mobilesdk_app_id": "1:569260151805:android:b92bb31d571920516cff94",
         "android_client_info": {
           "package_name": "com.origo.renting"

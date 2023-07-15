@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:real/Utils/Routes/route_name.dart';
+import 'package:real/View/Auth%20Screens/login_screen.dart';
+import 'package:real/View/Auth%20Screens/signup_screen.dart';
 import 'package:real/View/intro_screen.dart';
-import 'package:real/View/login_screen.dart';
-import 'package:real/View/signup_screen.dart';
+ 
 
 class Routes {
   static Route<dynamic> generateRoutes(RouteSettings routeSettings) {
