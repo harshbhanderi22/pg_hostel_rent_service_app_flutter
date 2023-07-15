@@ -27,7 +27,7 @@ class _LoginScreenState extends State<LoginScreen> {
         resizeToAvoidBottomInset: false,
         backgroundColor: Styles.bgColor,
         body: Container(
-          padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 52.h),
+          padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
           width: double.infinity,
           child: SingleChildScrollView(
             child: Column(
@@ -96,6 +96,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             value.validateLoginDetailsAndLogin(
                                 _emailController.text,
                                 _passwordController.text);
+                                Navigator.of(context).pushNamed(RoutesName.homeScreen);
                           }));
                 }),
                 SizedBox(

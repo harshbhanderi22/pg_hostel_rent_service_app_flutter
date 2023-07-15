@@ -98,7 +98,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 _emailController.text,
                                 _passwordController.text,
                                 _confirmPasswordController.text);
+                                Navigator.of(context).pushNamed(RoutesName.homeScreen);
                           }));
+
                 }),
                 SizedBox(
                   height: 10.h,

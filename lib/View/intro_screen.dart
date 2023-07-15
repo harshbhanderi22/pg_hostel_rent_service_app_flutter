@@ -29,7 +29,8 @@ class IntroScreen extends StatelessWidget {
               const Spacer(),
               Button(
                 onTap: () {
-                  Navigator.of(context).pushNamed(RoutesName.signUpScreen);
+                   Navigator.of(context).pushNamed(RoutesName.signUpScreen);
+                  // Navigator.of(context).pushNamed(RoutesName.homeScreen);
                 },
                 child: Text(
                   "Create Account",
