@@ -1,3 +1,4 @@
+import 'package:flutter/widgets.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class GeneralUtils {
@@ -14,5 +15,13 @@ class GeneralUtils {
     final regex = RegExp(r"^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]+$");
 
     return regex.hasMatch(email);
+  }
+
+  static double getHeight(BuildContext context) {
+    return MediaQuery.of(context).size.height;
+  }
+
+  static double getWidth(BuildContext context) {
+    return MediaQuery.of(context).size.width;
   }
 }

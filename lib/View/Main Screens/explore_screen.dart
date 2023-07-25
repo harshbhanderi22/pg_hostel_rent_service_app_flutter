@@ -2,7 +2,7 @@ import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:real/View/buy_product.dart';
+import 'package:real/View/rent_propery_view.dart';
 import 'package:real/Viewmodel/explore_viewmodel.dart';
 import '../../Utils/app_styles.dart';
 
@@ -16,7 +16,7 @@ class ExploreScreen extends StatefulWidget {
 class _ExploreScreenState extends State<ExploreScreen> {
   @override
   Widget build(BuildContext context) {
-    print("Whole Build");
+     
     return SafeArea(
       child: SizedBox(
         height: MediaQuery.of(context).size.height,
@@ -133,7 +133,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
               const SizedBox(
                 height: 20.0,
               ),
-              const Expanded(child: BuyProduct())
+              const Expanded(child: RentProperty())
             ],
           ),
         ),
